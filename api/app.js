@@ -1,7 +1,7 @@
 'use strict'
 const express = require('express')
 const bodyParser = require('body-parser')
-//const router = require('./routes')
+const router = require('./routes')
 
 const app = express()
 
@@ -16,6 +16,6 @@ app.use((req, res, next) => {
     next()
 })
 
-//app.use('', router)
+app.use('', router)
 
 module.exports = app;
