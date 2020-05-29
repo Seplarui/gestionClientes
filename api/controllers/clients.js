@@ -35,10 +35,42 @@ function detailClient(req, res) {
 }
 
 
+//Alta cliente
 
+function newClient(req, res) {
+    var datosCliente = {}
+    datosCliente = {
+        cif: req.body.cif,
+        razonsocial: req.body.razonsocial,
+        contacto: req.body.contacto,
+        email: req.body.email,
+        telefono: req.body.telefono,
+        direccion: req.body.direccion,
+        horas: req.body.horas
+    }
+
+    if (datosCliente.cif == null || datosCliente.cif == '') {
+        return res.status(400).send({ message: `El cif no puede estar en blanco` })
+    } else {
+        conexion.query('SELECT CIF FROM CLIENTES WHERE CIF = ?', datosCliente.cif, function (err, success) {
+            if (success.length == 0) {
+                conexion.query('INSERT INTO CLIENTES SET ?', datosCliente, function (err, success) {
+                    if (err) {
+                        res.status(500).send({ message: `Error, no se ha podido dar de alta el cliente, ${err}` })
+                    } else {
+                        res.status(200).send({ message: `Alta de cliente correcta` })
+                    }
+                })
+            } else {
+                res.status(500).send({ message: `El cliente ya existe.` })
+            }
+        })
+    }
+}
 
 
 module.exports = {
     getClients,
-    detailClient
+    detailClient,
+    newClient
 }
