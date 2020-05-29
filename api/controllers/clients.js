@@ -22,10 +22,10 @@ function detailClient(req, res) {
     if (clienteid == null || clienteid == "") {
         res.status(400).send({ message: `No se encuentra el cliente.` })
     } else {
-        conexion.query('SELECT * FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (req, res) {
+        conexion.query('SELECT * FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (err, success) {
             if (err) {
                 res.status(500).send({ message: `Error, no se ha podido recuperar el cliente, ${err}` })
-            } else if (success.lenght == 1) {
+            } else if (success.length == 1) {
                 res.status(200).send({ message: success })
             } else {
                 res.status(400).send({ message: `El cliente no existe.` })
