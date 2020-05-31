@@ -19,7 +19,7 @@ function getClients(req, res) {
 
 function detailClient(req, res) {
     var clienteid = req.body.clienteid
-    if (clienteid == null || clienteid == "") {
+    if (clienteid == null || clienteid == '') {
         res.status(400).send({ message: `No se encuentra el cliente.` })
     } else {
         conexion.query('SELECT * FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (err, success) {

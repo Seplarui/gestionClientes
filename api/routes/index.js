@@ -17,6 +17,7 @@ router.post('/deleteclient', clientsCtrl.deleteClient)
 
 //RUTAS USUARIOS
 router.get('/getusers', usersCtrl.getUsers)
+router.post('/detailuser', usersCtrl.detailUser)
 
 
 module.exports = router
