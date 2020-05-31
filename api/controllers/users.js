@@ -96,9 +96,32 @@ function updateUser(req, res) {
     }
 }
 
+function deleteUser(req,res) {
+    var usuarioid = req.body.usuarioid
+    if(usuarioid == null || usuarioid == '') {
+        return res.status(400).send({message: `El identificador del usuario no puede estar en blanco`})
+    } else {
+        conexion.query('SELECT USUARIO FROM USUARIOS WHERE USUARIOID = ?', usuarioid, function(err, success) {
+            console.log(success)
+            if(success.length == 1) {
+                conexion.query('DELETE FROM USUARIOS WHERE USUARIOID = ?', usuarioid, function(err, success) {
+                    if(err) {
+                        res.status(500).send({message: `No se ha podido eliminar el usuario.`})
+                    } else {
+                        res.status(200).send({message: `Usuario borrado correctamente`})
+                    }
+                })
+            } else {
+                res.status(500).send({message:`El usuario no existe`})
+            }
+        })
+    }
+}
+
 module.exports = {
     getUsers,
     detailUser,
     newUser,
-    updateUser
+    updateUser,
+    deleteUser
 }

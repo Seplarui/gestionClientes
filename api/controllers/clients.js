@@ -119,7 +119,7 @@ function deleteClient(req, res) {
                     }
                 })
             } else {
-                res.status(500).send({ message: ` El cliente no existe` })
+                res.status(500).send({ message: `El cliente no existe` })
             }
         })
     }
