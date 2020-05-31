@@ -11,13 +11,14 @@ const usersCtrl = require('../controllers/users')
 //RUTAS CLIENTES
 router.get('/getclients', clientsCtrl.getClients)
 router.post('/detailclient', clientsCtrl.detailClient)
-router.post('/saveclient', clientsCtrl.newClient)
+router.post('/newclient', clientsCtrl.newClient)
 router.post('/updateclient', clientsCtrl.updateClient)
 router.post('/deleteclient', clientsCtrl.deleteClient)
 
 //RUTAS USUARIOS
 router.get('/getusers', usersCtrl.getUsers)
 router.post('/detailuser', usersCtrl.detailUser)
+router.post('/newuser', usersCtrl.newUser)
 
 
 module.exports = router
