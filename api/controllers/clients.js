@@ -68,6 +68,7 @@ function newClient(req, res) {
     }
 }
 
+//Actualizar cliente
 function updateClient(req, res) {
     var clienteid = req.body.clienteid
     var datosCliente = {}
@@ -83,7 +84,7 @@ function updateClient(req, res) {
     }
 
     if (clienteid == null || clienteid == '') {
-        return res.status(400).end({ message: `El identificador del cliente no puede estar en blanco` })
+        return res.status(400).send({ message: `El identificador del cliente no puede estar en blanco` })
     } else {
         conexion.query('SELECT CIF FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (err, success) {
             console.log(success)
@@ -96,7 +97,7 @@ function updateClient(req, res) {
                     }
                 })
             } else {
-                res.status(500).send({ message: `El cliente no existe` })
+                res.status(500).send({ message: `El cliente no existe.` })
             }
         })
     }

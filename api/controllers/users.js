@@ -63,8 +63,42 @@ function newUser(req, res) {
     }
 }
 
+//Actualizar usuario
+
+function updateUser(req, res) {
+    var usuarioid = req.body.usuarioid
+    var datosUsuario = {}
+
+    datosUsuario = {
+        usuario: req.body.usuario,
+        password: req.body.password,
+        nombre: req.body.nombre,
+        tipousuario: req.body.tipousuario
+    }
+
+    if (usuarioid == null || usuarioid == '') {
+        return res.status(400).send({ message: `El identificador del usuario no puede estar en blanco` })
+    } else {
+        conexion.query('SELECT USUARIO FROM USUARIOS WHERE USUARIOID = ?', usuarioid, function (err, success) {
+            console.log(success)
+            if (success.length == 1) {
+                conexion.query('UPDATE USUARIOS SET ? WHERE USUARIOID = ?', [datosUsuario, usuarioid], function (err, success) {
+                    if (err) {
+                        res.status(500).send({ message: `No se ha podido actualizar el usuario ${err}` })
+                    } else {
+                        res.status(200).send({message: `Actualizado el usuario correctamente.`})
+                    }
+                })
+            } else {
+                res.status(500).send({message: `El usuario no existe.`})
+            }
+        })
+    }
+}
+
 module.exports = {
     getUsers,
     detailUser,
-    newUser
+    newUser,
+    updateUser
 }

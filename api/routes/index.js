@@ -19,6 +19,7 @@ router.post('/deleteclient', clientsCtrl.deleteClient)
 router.get('/getusers', usersCtrl.getUsers)
 router.post('/detailuser', usersCtrl.detailUser)
 router.post('/newuser', usersCtrl.newUser)
+router.post('/updateuser', usersCtrl.updateUser)
 
 
 module.exports = router
