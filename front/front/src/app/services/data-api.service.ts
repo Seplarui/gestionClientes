@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getLogin() {
+    const urlApi = 'localhost:3001/loginuser';
+
+    return this.http.get(urlApi);
+  }
 }
