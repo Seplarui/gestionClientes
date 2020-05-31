@@ -10,8 +10,9 @@ export class DataApiService {
   constructor(private http: HttpClient) { }
 
   getLogin() {
-    const urlApi = 'localhost:3001/loginuser';
+    const urlApi = 'http://localhost:3001/loginuser';
 
-    return this.http.get(urlApi);
+    //return this.http.get(urlApi);
+    return this.http.post<any>(urlApi,body);
   }
 }
