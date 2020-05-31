@@ -10,6 +10,7 @@ const clientsCtrl = require('../controllers/clients')
 router.get('/getclients', clientsCtrl.getClients)
 router.post('/detailclient', clientsCtrl.detailClient)
 router.post('/saveclient', clientsCtrl.newClient)
+router.post('/updateclient', clientsCtrl.updateClient)
 
 
 module.exports = router

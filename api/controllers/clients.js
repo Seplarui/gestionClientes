@@ -68,9 +68,44 @@ function newClient(req, res) {
     }
 }
 
+function updateClient(req, res) {
+    var clienteid = req.body.clienteid
+    var datosCliente = {}
+
+    datosCliente = {
+        cif: req.body.cif,
+        razonsocial: req.body.razonsocial,
+        contacto: req.body.contacto,
+        email: req.body.email,
+        telefono: req.body.telefono,
+        direccion: req.body.direccion,
+        horas: req.body.horas
+    }
+
+    if (clienteid == null || clienteid == '') {
+        return res.status(400).end({ message: `El identificador del cliente no puede estar en blanco` })
+    } else {
+        conexion.query('SELECT CIF FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (err, success) {
+            console.log(success)
+            if (success.length == 1) {
+                conexion.query('UPDATE CLIENTES SET ? WHERE CLIENTEID = ?', [datosCliente, clienteid], function (err, success) {
+                    if (err) {
+                        res.status(500).send({ message: `No se ha podido actualizar el cliente ${err}` })
+                    } else {
+                        res.status(200).send({ message: `Actualizado el cliente correctamente.` })
+                    }
+                })
+            } else {
+                res.status(500).send({ message: `El cliente no existe` })
+            }
+        })
+    }
+}
+
 
 module.exports = {
     getClients,
     detailClient,
-    newClient
+    newClient,
+    updateClient
 }
