@@ -102,10 +102,33 @@ function updateClient(req, res) {
     }
 }
 
+function deleteClient(req, res) {
+    var clienteid = req.body.clienteid
+    if (clienteid == null || clienteid == '') {
+        return res.status(400).send({ message: `El identificador del cliente no puede estar en blanco` })
+    } else {
+        conexion.query('SELECT CIF FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (err, success) {
+            console.log(success)
+            if (success.length == 1) {
+                conexion.query('DELETE FROM CLIENTES WHERE CLIENTEID = ?', clienteid, function (err, success) {
+                    if (err) {
+                        res.status(500).send({ message: `No se ha podido eliminar el cliente.` })
+                    } else {
+                        res.status(200).send({ message: `Cliente borrado correctamente` })
+                    }
+                })
+            } else {
+                res.status(500).send({ message: ` El cliente no existe` })
+            }
+        })
+    }
+}
+
 
 module.exports = {
     getClients,
     detailClient,
     newClient,
-    updateClient
+    updateClient,
+    deleteClient
 }

@@ -11,6 +11,7 @@ router.get('/getclients', clientsCtrl.getClients)
 router.post('/detailclient', clientsCtrl.detailClient)
 router.post('/saveclient', clientsCtrl.newClient)
 router.post('/updateclient', clientsCtrl.updateClient)
+router.post('/deleteclient', clientsCtrl.deleteClient)
 
 
 module.exports = router
