@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  getLogin(formLogin: NgForm) {
-    this.dataApi.getLogin().subscribe((login) => console.log(login));
-  }
+  // getLogin(formLogin: NgForm) {
+  //   this.dataApi.getLogin().subscribe((login) => console.log(login));
+  // }
 
 }

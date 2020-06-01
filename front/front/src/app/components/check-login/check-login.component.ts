@@ -14,6 +14,6 @@ export class CheckLoginComponent implements OnInit {
   }
 
   checkLogin() {
-    this.dataApi.getLogin().subscribe((login) => console.log(login));
+    // this.dataApi.getLogin().subscribe((login) => console.log(login));
   }
 }
