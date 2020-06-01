@@ -21,6 +21,7 @@ router.post('/detailuser', usersCtrl.detailUser)
 router.post('/newuser', usersCtrl.newUser)
 router.post('/updateuser', usersCtrl.updateUser)
 router.post('/deleteuser', usersCtrl.deleteUser)
+router.post('/loginuser', usersCtrl.checkLogin)
 
 
 module.exports = router
