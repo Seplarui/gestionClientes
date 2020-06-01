@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckLoginComponent } from './components/check-login/check-login.component';
 import { HomeComponent } from './components/home/home.component';
+import { ListClientsComponent } from './components/list-clients/list-clients.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     NavbarComponent,
     CheckLoginComponent,
-    HomeComponent
+    HomeComponent,
+    ListClientsComponent
   ],
   imports: [
     BrowserModule,

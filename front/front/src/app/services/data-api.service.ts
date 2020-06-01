@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,9 @@ export class DataApiService {
 
   constructor(private http: HttpClient) { }
 
-  getLogin() {
-    const urlApi = 'http://localhost:3001/loginuser';
-
-    // return this.http.get(urlApi);
-    // return this.http.post<any>(urlApi,body);
+  getClients() {
+    const urlAPI = 'http://localhost:3001/getclients';
+    return this.http.get(urlAPI);
   }
+
 }
