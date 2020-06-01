@@ -12,7 +12,7 @@ export class DataApiService {
   getLogin() {
     const urlApi = 'http://localhost:3001/loginuser';
 
-    //return this.http.get(urlApi);
-    return this.http.post<any>(urlApi,body);
+    // return this.http.get(urlApi);
+    // return this.http.post<any>(urlApi,body);
   }
 }
