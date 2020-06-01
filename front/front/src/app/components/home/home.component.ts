@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  tipoUsuario: any;
+  constructor(private _route: ActivatedRoute) {
+    this.tipoUsuario = this._route.snapshot.paramMap.get('tipousuario');
+  }
 
   ngOnInit(): void {
   }
-
 }
