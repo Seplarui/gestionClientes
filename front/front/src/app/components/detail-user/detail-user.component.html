@@ -1,1 +1,62 @@
-<p>detail-user works!</p>
+<div class="container">
+  <div class ="row">
+    <div class="col-md-6">
+      <h3><strong>CLIENTE ID: {{usuario[0].usuarioid}}</strong></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="cifEmpresa">CIF</label>
+      <input type="text" class="form-control" value={{usuario[0].usuario}} readonly>
+      <label for="razonEmpresa">Razón</label>
+      <input type="text" class="form-control" value={{usuario[0].nombre}} readonly>
+    </div>
+    <div class="col-md-6">
+      <label for="contactoEmpresa1">Contacto</label>
+      <input type="text" class="form-control" value={{usuario[0].tipousuario}} readonly>
+      <!-- <label for="correoempresa1">Correo</label>
+      <input type="text" class="form-control" value={{usuario[0].email}} readonly> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <label for="telefonoempresa1">Teléfono</label>
+      <input type="text" class="form-control" value={{cliente[0].telefono}} readonly> -->
+    </div>
+    <div class="col-md-6">
+      <!-- <label for="horascontrato">Horas</label>
+      <input type="text" class="form-control" value={{cliente[0].horas}} readonly> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" value={{cliente[0].direccion}} readonly> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" routerLink='/inicio/0/listusers'>Volver</button>
+      <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" routerLink='/inicio/1/listusers'>Volver</button>
+    </div>
+  </div>
+</div>

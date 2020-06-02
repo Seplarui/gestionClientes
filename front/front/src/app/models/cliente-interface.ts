@@ -7,5 +7,4 @@ export interface ClienteInterface {
   telefono?: string;
   direccion?: string;
   horas?: string;
-
 }
