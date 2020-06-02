@@ -58,32 +58,11 @@
     </ul>
   </div>
 </nav>
-<body>
-
-  <table class="table table-striped text-center">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">CIF</th>
-        <th scope="col">RAZÓN SOCIAL</th>
-        <th scope="col">CONTACTO PRINCIPAL</th>
-        <th scope="col">HORAS TOT. CONTRATO</th>
-        <th scope="col">ACCIONES</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let cliente of clientes'>
-        <th scope="row">{{cliente.clienteid}}</th>
-        <th scope="row">{{cliente.cif | uppercase}}</th>
-        <th scope="row">{{cliente.razonsocial | uppercase}}</th>
-        <th scope="row">{{cliente.contacto | uppercase}}</th>
-        <th scope="row">{{cliente.horas }}</th>
-        <th scope="row>">
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" [routerLink] = "['/inicio/0/detailclient/', cliente.clienteid]">Detalle</button>
-        <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" [routerLink] = "['/inicio/1/detailclient/', cliente.clienteid]">Detalle</button>
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-danger" [routerLink]="['/inicio/0/deleteclient',cliente.clienteid]">Eliminar</button>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Cliente borrado</h1>
+    </div>
+    <button type="button" class="btn btn-primary" [routerLink]="['/inicio/0/listclients']">Volver</button>
+  </div>
+</div>

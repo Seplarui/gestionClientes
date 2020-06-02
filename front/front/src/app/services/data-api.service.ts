@@ -22,4 +22,12 @@ export class DataApiService {
     return this.http.post<ClienteInterface>(urlAPI, body).pipe(map(data => data));
   }
 
+  deleteClient(clienteid: string) {
+    const urlAPI = 'http://localhost:3001/deleteclient';
+    const body = { 'clienteid': clienteid };
+
+    return this.http.post<any>(urlAPI, body).pipe(map(data => data));
+
+  }
+
 }

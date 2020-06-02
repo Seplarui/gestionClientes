@@ -11,6 +11,7 @@ import { CheckLoginComponent } from './components/check-login/check-login.compon
 import { HomeComponent } from './components/home/home.component';
 import { ListClientsComponent } from './components/list-clients/list-clients.component';
 import { DetailClientComponent } from './components/detail-client/detail-client.component';
+import { DeleteClientComponent } from './components/delete-client/delete-client.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailClientComponent } from './components/detail-client/detail-client.
     CheckLoginComponent,
     HomeComponent,
     ListClientsComponent,
-    DetailClientComponent
+    DetailClientComponent,
+    DeleteClientComponent
   ],
   imports: [
     BrowserModule,
