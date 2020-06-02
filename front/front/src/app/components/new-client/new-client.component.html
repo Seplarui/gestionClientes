@@ -14,7 +14,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="inicio/0/listclients">Listar Clientes</a>
-          <a class="dropdown-item" routerLink='/inicio/0/newclient'>Alta Cliente</a>
+          <a class="dropdown-item" href="#">Alta Cliente</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -61,21 +61,21 @@
 <div class="container">
   <div class ="row">
     <div class="col-md-6">
-      <h3><strong>CLIENTE ID: {{cliente[0].clienteid}}</strong></h3>
+      <h3><strong>ALTA CLIENTE</strong></h3>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <label for="cifEmpresa">CIF</label>
-      <input type="text" class="form-control" value={{cliente[0].cif}} readonly>
+      <input type="text" class="form-control">
       <label for="razonEmpresa">Razón</label>
-      <input type="text" class="form-control" value={{cliente[0].razonsocial}} readonly>
+      <input type="text" class="form-control">
     </div>
     <div class="col-md-6">
       <label for="contactoEmpresa1">Contacto</label>
-      <input type="text" class="form-control" value={{cliente[0].contacto}} readonly>
+      <input type="text" class="form-control">
       <label for="correoempresa1">Correo</label>
-      <input type="text" class="form-control" value={{cliente[0].email}} readonly>
+      <input type="text" class="form-control">
 
     </div>
   </div>
@@ -83,11 +83,11 @@
   <div class="row">
     <div class="col-md-6">
       <label for="telefonoempresa1">Teléfono</label>
-      <input type="text" class="form-control" value={{cliente[0].telefono}} readonly>
+      <input type="text" class="form-control">
     </div>
     <div class="col-md-6">
       <label for="horascontrato">Horas</label>
-      <input type="text" class="form-control" value={{cliente[0].horas}} readonly>
+      <input type="text" class="form-control">
     </div>
   </div>
   <div class="row">
@@ -111,7 +111,7 @@
   <div class="row">
     <div class="col-md-6">
       <label for="direccion">Direccion</label>
-      <input type="text" class="form-control" value={{cliente[0].direccion}} readonly>
+      <input type="text" class="form-control">
     </div>
   </div>
   <div class="row">

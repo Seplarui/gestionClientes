@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListClientsComponent } from './components/list-clients/list-clients.component';
 import { DetailClientComponent } from './components/detail-client/detail-client.component';
 import { DeleteClientComponent } from './components/delete-client/delete-client.component';
+import { NewClientComponent } from './components/new-client/new-client.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteClientComponent } from './components/delete-client/delete-client.
     HomeComponent,
     ListClientsComponent,
     DetailClientComponent,
-    DeleteClientComponent
+    DeleteClientComponent,
+    NewClientComponent
   ],
   imports: [
     BrowserModule,
