@@ -73,11 +73,11 @@
     </thead>
     <tbody>
       <tr *ngFor='let cliente of clientes'>
-        <th scope="row">{{cliente.clienteID}}</th>
+        <th scope="row">{{cliente.clienteid}}</th>
         <th scope="row">{{cliente.cif | uppercase}}</th>
         <th scope="row">{{cliente.razonsocial | uppercase}}</th>
-        <th scope="row">{{cliente.contacto1 | uppercase}}</th>
-        <th scope="row">{{cliente.horascontrato }}</th>
+        <th scope="row">{{cliente.contacto | uppercase}}</th>
+        <th scope="row">{{cliente.horas }}</th>
         <th scope="row>">
         <button type="button" class="btn btn-primary" [routerLink] = "['/detalleEmpresa', cliente.clienteID]">Detalle</button>
           <button type="button" class="btn btn-danger">Eliminar</button>
