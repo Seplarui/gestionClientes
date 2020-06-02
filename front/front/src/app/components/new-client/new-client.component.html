@@ -58,24 +58,26 @@
     </ul>
   </div>
 </nav>
+<form #formCliente="ngForm" ngNativeValidate (ngSubmit)="onSaveClient(formCliente)">
 <div class="container">
   <div class ="row">
     <div class="col-md-6">
+
       <h3><strong>ALTA CLIENTE</strong></h3>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <label for="cifEmpresa">CIF</label>
-      <input type="text" class="form-control">
-      <label for="razonEmpresa">Razón</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="cif" ngModel >
+      <label for="razonEmpresa">Razón Social</label>
+      <input type="text" class="form-control" name="razonsocial" ngModel >
     </div>
     <div class="col-md-6">
       <label for="contactoEmpresa1">Contacto</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="contacto" ngModel>
       <label for="correoempresa1">Correo</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="email" ngModel>
 
     </div>
   </div>
@@ -83,11 +85,11 @@
   <div class="row">
     <div class="col-md-6">
       <label for="telefonoempresa1">Teléfono</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="telefono" ngModel>
     </div>
     <div class="col-md-6">
       <label for="horascontrato">Horas</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="horas" ngModel>
     </div>
   </div>
   <div class="row">
@@ -111,14 +113,15 @@
   <div class="row">
     <div class="col-md-6">
       <label for="direccion">Direccion</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="direccion" ngModel>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
+      <button type="submit" class="btn btn-success">Salvar</button>
       <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" routerLink='/inicio/0/listclients'>Volver</button>
       <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" routerLink='/inicio/1/listclients'>Volver</button>
     </div>
   </div>
 </div>
-
+</form>

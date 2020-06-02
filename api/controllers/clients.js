@@ -40,13 +40,14 @@ function detailClient(req, res) {
 function newClient(req, res) {
     var datosCliente = {}
     datosCliente = {
-        cif: req.body.cif,
-        razonsocial: req.body.razonsocial,
-        contacto: req.body.contacto,
-        email: req.body.email,
-        telefono: req.body.telefono,
-        direccion: req.body.direccion,
-        horas: req.body.horas
+        // cif: req.body.cif,
+        cif: req.body.cliente.cif,
+        razonsocial: req.body.cliente.razonsocial,
+        contacto: req.body.cliente.contacto,
+        email: req.body.cliente.email,
+        telefono: req.body.cliente.telefono,
+        direccion: req.body.cliente.direccion,
+        horas: req.body.cliente.horas
     }
 
     if (datosCliente.cif == null || datosCliente.cif == '') {

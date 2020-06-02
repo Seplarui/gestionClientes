@@ -30,4 +30,10 @@ export class DataApiService {
 
   }
 
+  saveClient(cliente: ClienteInterface) {
+    const urlAPI = 'http://localhost:3001/newclient';
+    const body = { cliente };
+    return this.http.post<any>(urlAPI, body).pipe(map(data => data));
+  }
+
 }
