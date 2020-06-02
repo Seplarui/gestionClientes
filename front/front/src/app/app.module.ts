@@ -14,6 +14,11 @@ import { DetailClientComponent } from './components/detail-client/detail-client.
 import { DeleteClientComponent } from './components/delete-client/delete-client.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
 import { UpdateClientComponent } from './components/update-client/update-client.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
+import { DetailUserComponent } from './components/detail-user/detail-user.component';
+import { DeleteUserComponent } from './components/delete-user/delete-user.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { UpdateClientComponent } from './components/update-client/update-client.
     DetailClientComponent,
     DeleteClientComponent,
     NewClientComponent,
-    UpdateClientComponent
+    UpdateClientComponent,
+    ListUsersComponent,
+    DetailUserComponent,
+    DeleteUserComponent,
+    NewUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
