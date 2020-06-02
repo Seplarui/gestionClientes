@@ -58,32 +58,72 @@
     </ul>
   </div>
 </nav>
-<body>
+<div class="container">
+  <div class ="row">
+    <div class="col-md-6">
+      <h3><strong>CLIENTE ID: {{cliente[0].clienteid}}</strong></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="cifEmpresa">CIF</label>
+      <input type="text" class="form-control" value={{cliente[0].cif}} readonly>
+      <label for="razonEmpresa">Razón</label>
+      <input type="text" class="form-control" value={{cliente[0].razonsocial}} readonly>
+    </div>
+    <div class="col-md-6">
+      <label for="contactoEmpresa1">Contacto</label>
+      <input type="text" class="form-control" value={{cliente[0].contacto}} readonly>
+      <label for="correoempresa1">Correo</label>
+      <input type="text" class="form-control" value={{cliente[0].email}} readonly>
 
-  <table class="table table-striped text-center">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">CIF</th>
-        <th scope="col">RAZÓN SOCIAL</th>
-        <th scope="col">CONTACTO PRINCIPAL</th>
-        <th scope="col">HORAS TOT. CONTRATO</th>
-        <th scope="col">ACCIONES</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let cliente of clientes'>
-        <th scope="row">{{cliente.clienteid}}</th>
-        <th scope="row">{{cliente.cif | uppercase}}</th>
-        <th scope="row">{{cliente.razonsocial | uppercase}}</th>
-        <th scope="row">{{cliente.contacto | uppercase}}</th>
-        <th scope="row">{{cliente.horas }}</th>
-        <th scope="row>">
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" [routerLink] = "['/inicio/0/detailclient/', cliente.clienteid]">Detalle</button>
-        <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" [routerLink] = "['/inicio/1/detailclient/', cliente.clienteid]">Detalle</button>
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-danger">Eliminar</button>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</body>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <label for="telefonoempresa1">Teléfono</label>
+      <input type="text" class="form-control" value={{cliente[0].telefono}} readonly>
+    </div>
+    <div class="col-md-6">
+      <label for="horascontrato">Horas</label>
+      <input type="text" class="form-control" value={{cliente[0].horas}} readonly>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" value={{cliente[0].direccion}} readonly>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" routerLink='/inicio/0/listclients'>Volver</button>
+      <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" routerLink='/inicio/1/listclients'>Volver</button>
+    </div>
+  </div>
+</div>
+

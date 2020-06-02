@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CheckLoginComponent } from './components/check-login/check-login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListClientsComponent } from './components/list-clients/list-clients.component';
+import { DetailClientComponent } from './components/detail-client/detail-client.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListClientsComponent } from './components/list-clients/list-clients.com
     NavbarComponent,
     CheckLoginComponent,
     HomeComponent,
-    ListClientsComponent
+    ListClientsComponent,
+    DetailClientComponent
   ],
   imports: [
     BrowserModule,
