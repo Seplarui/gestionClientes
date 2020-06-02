@@ -6,6 +6,7 @@ import { ListClientsComponent } from './components/list-clients/list-clients.com
 import { DetailClientComponent } from './components/detail-client/detail-client.component';
 import { DeleteClientComponent } from './components/delete-client/delete-client.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
+import { UpdateClientComponent } from './components/update-client/update-client.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'inicio/:tipousuario/listclients', component: ListClientsComponent },
   { path: 'inicio/:tipousuario/detailclient/:id', component: DetailClientComponent },
   { path: 'inicio/:tipousuario/deleteclient/:id', component: DeleteClientComponent },
-  { path: 'inicio/:tipousuario/newclient', component: NewClientComponent }
+  { path: 'inicio/:tipousuario/newclient', component: NewClientComponent },
+  { path: 'inicio/:tipousuario/updateclient/:id', component: UpdateClientComponent }
 ];
 
 @NgModule({

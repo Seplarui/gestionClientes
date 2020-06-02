@@ -13,6 +13,7 @@ import { ListClientsComponent } from './components/list-clients/list-clients.com
 import { DetailClientComponent } from './components/detail-client/detail-client.component';
 import { DeleteClientComponent } from './components/delete-client/delete-client.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
+import { UpdateClientComponent } from './components/update-client/update-client.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NewClientComponent } from './components/new-client/new-client.component
     ListClientsComponent,
     DetailClientComponent,
     DeleteClientComponent,
-    NewClientComponent
+    NewClientComponent,
+    UpdateClientComponent
   ],
   imports: [
     BrowserModule,

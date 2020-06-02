@@ -71,17 +71,19 @@ function newClient(req, res) {
 
 //Actualizar cliente
 function updateClient(req, res) {
-    var clienteid = req.body.clienteid
+    var clienteid = req.body.cliente.clienteid
+    var cliente2 = req.body.clienteid
     var datosCliente = {}
+    var datosCliente2 = {}
 
     datosCliente = {
-        cif: req.body.cif,
-        razonsocial: req.body.razonsocial,
-        contacto: req.body.contacto,
-        email: req.body.email,
-        telefono: req.body.telefono,
-        direccion: req.body.direccion,
-        horas: req.body.horas
+        cif: req.body.cliente.cif,
+        razonsocial: req.body.cliente.razonsocial,
+        contacto: req.body.cliente.contacto,
+        email: req.body.cliente.email,
+        telefono: req.body.cliente.telefono,
+        direccion: req.body.cliente.direccion,
+        horas: req.body.cliente.horas
     }
 
     if (clienteid == null || clienteid == '') {

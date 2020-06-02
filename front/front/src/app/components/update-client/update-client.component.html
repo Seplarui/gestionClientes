@@ -14,7 +14,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="inicio/0/listclients">Listar Clientes</a>
-          <a class="dropdown-item" href="#">Alta Cliente</a>
+          <a class="dropdown-item" routerLink='/inicio/0/newclient'>Alta Cliente</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -58,33 +58,75 @@
     </ul>
   </div>
 </nav>
-<body>
+<form #formCliente="ngForm" (ngSubmit)="onUpdateClient(formCliente)">
+  <input type="hidden" name="clienteid" id = "clienteid" value={{cliente[0].clienteid}} >
+<div class="container">
+  <div class ="row">
+    <div class="col-md-6">
+      <h3><strong>CLIENTE ID: {{cliente[0].clienteid}}</strong></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="clienteid">ClienteID</label>
+      <input type="text" class="form-control" name="clienteid" value={{cliente[0].clienteid}} ngModel={{cliente[0].clienteid}} readonly>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="cif">CIF</label>
+      <input type="text" class="form-control" name="cif" value={{cliente[0].cif}}  ngModel = {{cliente[0].cif}} required>
+      <label for="razonsocial">Razón</label>
+      <input type="text" class="form-control"  name="razonsocial" value={{cliente[0].razonsocial}} ngModel = {{cliente[0].razonsocial}} >
+    </div>
+    <div class="col-md-6">
+      <label for="contacto">Contacto</label>
+      <input type="text" class="form-control" name="contacto" value={{cliente[0].contacto}} ngModel = {{cliente[0].contacto}}  >
+      <label for="email">Correo</label>
+      <input type="text" class="form-control" name="email" value={{cliente[0].email}} ngModel = {{cliente[0].email}}  >
+    </div>
+  </div>
 
-  <table class="table table-striped text-center">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">CIF</th>
-        <th scope="col">RAZÓN SOCIAL</th>
-        <th scope="col">CONTACTO PRINCIPAL</th>
-        <th scope="col">HORAS TOT. CONTRATO</th>
-        <th scope="col">ACCIONES</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let cliente of clientes'>
-        <th scope="row">{{cliente.clienteid}}</th>
-        <th scope="row">{{cliente.cif | uppercase}}</th>
-        <th scope="row">{{cliente.razonsocial | uppercase}}</th>
-        <th scope="row">{{cliente.contacto | uppercase}}</th>
-        <th scope="row">{{cliente.horas }}</th>
-        <th scope="row>">
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" [routerLink] = "['/inicio/0/detailclient/', cliente.clienteid]">Detalle</button>
-        <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" [routerLink] = "['/inicio/1/detailclient/', cliente.clienteid]">Detalle</button>
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-danger" [routerLink]="['/inicio/0/deleteclient',cliente.clienteid]">Eliminar</button>
-        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-info" [routerLink]="['/inicio/0/updateclient',cliente.clienteid]">Actualizar</button>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</body>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="telefono">Teléfono</label>
+      <input type="text" class="form-control" name="telefono" value={{cliente[0].telefono}} ngModel = {{cliente[0].telefono}} >
+    </div>
+    <div class="col-md-6">
+      <label for="horas">Horas</label>
+      <input type="text" class="form-control" name="horas" value={{cliente[0].horas}} ngModel = {{cliente[0].horas}}  >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" name="direccion" value={{cliente[0].direccion}} ngModel = {{cliente[0].direccion}}>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-info">Actualizar</button>
+      <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary" routerLink='/inicio/0/listclients'>Volver</button>
+      <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary" routerLink='/inicio/1/listclients'>Volver</button>
+    </div>
+  </div>
+</div>
+</form>

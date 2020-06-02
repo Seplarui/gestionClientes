@@ -36,4 +36,16 @@ export class DataApiService {
     return this.http.post<any>(urlAPI, body).pipe(map(data => data));
   }
 
+  updateClient(clienteid: string) {
+    const urlAPI = 'http://localhost:3001/detailclient';
+    const body = { 'clienteid': clienteid };
+    return this.http.post<ClienteInterface>(urlAPI, body).pipe(map(data => data));
+  }
+
+  onUpdateClient(cliente: ClienteInterface) {
+    const urlAPI = 'http://localhost:3001/updateclient';
+    const body = { cliente };
+    return this.http.post<any>(urlAPI, body).pipe(map(data => data));
+  }
+
 }
