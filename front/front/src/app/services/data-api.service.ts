@@ -76,4 +76,16 @@ export class DataApiService {
     const body = { usuario };
     return this.http.post<any>(urlAPI, body).pipe(map(data => data));
   }
+
+  updateUser(userid: string) {
+    const urlAPI = 'http://localhost:3001/detailuser';
+    const body = { 'userid': userid };
+    return this.http.post<UsuarioInterface>(urlAPI, body).pipe(map(data => data));
+  }
+
+  onUpdateUser(usuario: UsuarioInterface) {
+    const urlAPI = 'http://localhost:3001/updateuser';
+    const body = { usuario };
+    return this.http.post<any>(urlAPI, body).pipe(map(data => data));
+  }
 }

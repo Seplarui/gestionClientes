@@ -67,14 +67,16 @@ function newUser(req, res) {
 //Actualizar usuario
 
 function updateUser(req, res) {
-    var usuarioid = req.body.usuarioid
+    var usuarioid = req.body.usuario.usuarioid
+    // var kk = req.body.user.usuarioid
+    var ss = req.body.usuario.usuarioid
     var datosUsuario = {}
 
     datosUsuario = {
-        usuario: req.body.usuario,
-        password: req.body.password,
-        nombre: req.body.nombre,
-        tipousuario: req.body.tipousuario
+        usuario: req.body.usuario.usuario,
+        password: req.body.usuario.password,
+        nombre: req.body.usuario.nombre,
+        tipousuario: req.body.usuario.tipousuario
     }
 
     if (usuarioid == null || usuarioid == '') {
