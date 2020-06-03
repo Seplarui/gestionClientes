@@ -64,12 +64,10 @@ export class DataApiService {
 
   }
 
+  deleteUser(userid: string) {
+    const urlAPI = 'http://localhost:3001/deleteuser';
+    const body = { 'usuarioid': userid };
 
-  // detailClient(clienteid: string) {
-  //   const urlAPI = 'http://localhost:3001/detailclient';
-  //   const body = { 'clienteid': clienteid };
-  //   return this.http.post<ClienteInterface>(urlAPI, body).pipe(map(data => data));
-  // }
-
-
+    return this.http.post<any>(urlAPI, body).pipe(map(data => data));
+  }
 }

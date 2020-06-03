@@ -24,7 +24,7 @@ export class DeleteClientComponent implements OnInit {
   deleteClient() {
     const id = this._route.snapshot.paramMap.get('id');
     this.DataApiService.deleteClient(id).subscribe((data) => console.log(data));
-    this.DataApiService.deleteClient(id).subscribe((data) => location.reload());
+    // this.DataApiService.deleteClient(id).subscribe((data) => location.reload());
   }
 
 }
