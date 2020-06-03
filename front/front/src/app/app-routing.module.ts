@@ -10,6 +10,7 @@ import { UpdateClientComponent } from './components/update-client/update-client.
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { DetailUserComponent } from './components/detail-user/detail-user.component';
 import { DeleteUserComponent } from './components/delete-user/delete-user.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'inicio/:tipousuario/updateclient/:id', component: UpdateClientComponent },
   { path: 'inicio/:tipousuario/listusers', component: ListUsersComponent },
   { path: 'inicio/:tipousuario/detailuser/:id', component: DetailUserComponent },
-  { path: 'inicio/:tipousuario/deleteuser/:id', component: DeleteUserComponent }
+  { path: 'inicio/:tipousuario/deleteuser/:id', component: DeleteUserComponent },
+  { path: 'inicio/:tipousuario/newuser', component: NewUserComponent }
 ];
 
 @NgModule({

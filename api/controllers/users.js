@@ -39,11 +39,12 @@ function detailUser(req, res) {
 function newUser(req, res) {
     var datosUsuario = {}
     datosUsuario = {
-        usuario: req.body.usuario,
-        password: req.body.password,
-        nombre: req.body.nombre,
-        tipousuario: req.body.tipousuario
+        usuario: req.body.usuario.usuario,
+        password: req.body.usuario.password,
+        nombre: req.body.usuario.nombre,
+        tipousuario: req.body.usuario.tipousuario
     }
+
     if (datosUsuario.usuario == null || datosUsuario.usuario == '') {
         return res.status(400).send({ message: `El usuario no puede estar en blanco` })
     } else {

@@ -1,1 +1,128 @@
-<p>new-user works!</p>
+<nav *ngIf="tipoUsuario==0" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Gestion Clientes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Clientes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="inicio/0/listclients">Listar Clientes</a>
+          <a class="dropdown-item" routerLink='/inicio/0/newclient'>Alta Cliente</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Usuarios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink='/inicio/0/listusers'>Listar Usuarios</a>
+          <a class="dropdown-item" href="#">Alta Usuario</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav *ngIf="tipoUsuario==1" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Gestion Clientes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Clientes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="inicio/1/listclients">Listar Clientes</a>
+        </div>
+      </li>
+      <li *ngIf="tipoUsuario==0" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Usuarios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink='/inicio/0/listusers'>Listar Usuarios</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<form #formUser="ngForm" ngNativeValidate (ngSubmit)="onSaveUser(formUser)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+
+        <h3><strong>ALTA USUARIO</strong></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="usuario">Usuario</label>
+        <input type="text" class="form-control" name="usuario" ngModel>
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" name="nombre" ngModel>
+        <label for="password">Pasword</label>
+        <input type="text" class="form-control" name="password" ngModel>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="tipousuario">Tipo Usuario</label>
+        <input type="text" class="form-control" name="tipousuario" size="1" maxlength="1" ngModel>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <button *ngIf="tipoUsuario==0" type="button" class="btn btn-primary"
+          routerLink='/inicio/0/listusers'>Volver</button>
+        <button *ngIf="tipoUsuario==1" type="button" class="btn btn-primary"
+          routerLink='/inicio/1/listusers'>Volver</button>
+      </div>
+    </div>
+  </div>
+</form>

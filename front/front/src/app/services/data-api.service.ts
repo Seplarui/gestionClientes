@@ -70,4 +70,10 @@ export class DataApiService {
 
     return this.http.post<any>(urlAPI, body).pipe(map(data => data));
   }
+
+  saveUser(usuario: UsuarioInterface) {
+    const urlAPI = 'http://localhost:3001/newuser';
+    const body = { usuario };
+    return this.http.post<any>(urlAPI, body).pipe(map(data => data));
+  }
 }
